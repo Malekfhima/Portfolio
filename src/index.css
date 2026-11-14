@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-void: #0A0F1F;
+  --color-surface: #0e1323;
+  --color-surface-low: #161b2b;
+  --color-surface-container: #1a1f30;
+  --color-surface-high: #25293a;
+  --color-surface-highest: #2f3446;
+  --color-cyan-orbit: #00D4FF;
+  --color-cyan-primary: #a8e8ff;
+  --color-violet-orbit: #7C3AED;
+  --color-violet-soft: #d2bbff;
+  --color-emerald-orbit: #10B981;
+  --color-emerald-soft: #6af7ba;
+  --color-on-surface: #dee1f9;
+  --color-on-surface-variant: #bbc9cf;
+  --color-steel: #94A3B8;
+  --color-muted-slate: #475569;
+}
+
+@layer base {
+  html {
+    background-color: #0A0F1F;
+    color: #dee1f9;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background-color: #0A0F1F;
+    background-image:
+      radial-gradient(ellipse 75% 42% at 50% -6%, rgba(124, 58, 237, 0.16), transparent 72%),
+      radial-gradient(ellipse 55% 35% at 85% 12%, rgba(0, 212, 255, 0.08), transparent 65%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+.glass-panel {
+  background: rgba(14, 22, 43, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.glass-card {
+  background: rgba(14, 22, 43, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+              transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 212, 255, 0.45);
+  box-shadow: 0 0 24px -4px rgba(0, 212, 255, 0.22);
+}
+
+.terminal-cavity {
+  background: rgba(5, 8, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.terminal-cavity:focus {
+  outline: none;
+  border-color: rgba(0, 212, 255, 0.6);
+  box-shadow: 0 0 18px -4px rgba(0, 212, 255, 0.32);
+}
+
+.btn-cybernetic {
+  background-color: #00D4FF;
+  color: #0A0F1F;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  transition: box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 120ms ease, background-color 160ms ease;
+}
+
+.btn-cybernetic:hover {
+  background-color: #3cd7ff;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+}
+
+.btn-cybernetic:active {
+  transform: scale(0.98);
+}
+
+.btn-ghost-shell {
+  background: rgba(14, 22, 43, 0.45);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #a8e8ff;
+  font-family: var(--font-mono);
+  transition: border-color 160ms ease, background-color 160ms ease, transform 120ms ease;
+}
+
+.btn-ghost-shell:hover {
+  border-color: rgba(0, 212, 255, 0.65);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+.btn-ghost-shell:active {
+  transform: scale(0.98);
+}
+
+.code-surface {
+  background: #060A14;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Subtle telemetry grid backdrop for hardware schematics */
+.schematic-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

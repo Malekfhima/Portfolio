@@ -1,0 +1,6 @@
+{
+  "name": "Malek Fhima — Cybernetic Orbit",
+  "description": "Full-stack architecture, embedded IoT systems, interactive hardware pinout schematics, and live telemetry console.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
